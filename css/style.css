@@ -38,6 +38,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
+  background: #121014;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
@@ -46,7 +47,7 @@ body {
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 400;
-  background: var(--bg-primary);
+  background: transparent;
   color: var(--text-primary);
   min-height: 100vh;
   overflow-x: hidden;
@@ -70,16 +71,19 @@ h1, h2, h3, h4, .stat-number, .btn, .nav-brand, .section-title {
 .arctic-bg {
   position: fixed;
   inset: 0;
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
   overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(18, 16, 20, 0.78) 0%, rgba(18, 16, 20, 0.62) 42%, rgba(18, 16, 20, 0.84) 100%),
+    url("../assets/casino-bg.jpg") center 72% / cover no-repeat;
 }
 
 .aurora {
   position: absolute;
   border-radius: 50%;
   filter: blur(90px);
-  opacity: 0.22;
+  opacity: 0.1;
   animation: auroraDrift 22s ease-in-out infinite alternate;
 }
 .aurora-1 { width: 55vw; height: 45vw; max-width: 700px; top: -12%; left: -18%; background: radial-gradient(circle, #e4c07a, transparent 70%); }
@@ -443,7 +447,7 @@ h1, h2, h3, h4, .stat-number, .btn, .nav-brand, .section-title {
 /* ── Stats under banner ── */
 
 .hero-stats-section {
-  background: var(--bg-primary);
+  background: transparent;
   padding: clamp(1.25rem, 3vw, 2rem) 1.25rem clamp(1rem, 2.5vw, 1.5rem);
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
